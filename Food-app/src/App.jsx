@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
  
-  const [search,setSearch]=useState("chinese")
+  const [search,setSearch]=useState("")
   const [recipes,setRecipes]=useState([])
 
   const APP_ID="973b83a8";
@@ -17,11 +17,11 @@ function App() {
   },[])
 
   const getRecipes = async () => {
-    // const res = await axios.get(
-    //   `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${APP_KEY}`
+    const res = await axios.get(
+      `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${APP_KEY}`
     
-    //   );
-    //   console.log(res)
+      );
+      console.log(res)
     setRecipes(res.data.hits);
   };
   const onInputChange=(e)=>{
@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>food-app</h1>
+      {/* <h1>food-app</h1> */}
       <Navbar search={search}
        onInputChange={onInputChange}
        onSearchClick={onSearchClick}

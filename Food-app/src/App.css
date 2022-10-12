@@ -1,11 +1,11 @@
-.main{
+.jumbotron{
   background-color: teal;
   color:white;
   padding:100px 0;
   text-align: center;
  
 }
-.recipes{
+.display-1{
   font-size: 100px;
 }
 
